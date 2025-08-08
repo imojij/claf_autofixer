@@ -212,6 +212,16 @@ button {
 .mission-description {
   overflow-y: auto;
   max-height: 60vh;
-  padding-right: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   padding-bottom: 2rem;
+  text-align: justify;
+}
+
+img {
+  max-width: 50%;
+  height: auto;
+  display: block;
 }
