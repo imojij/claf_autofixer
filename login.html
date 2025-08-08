@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="center-container">
+      <div class="login-container" data-augmented-ui>
+        <div  class="input-aug" data-augmented-ui>
+
+          <input type="text" id="username" placeholder=" handle">    
+        </div>
+        <div class="input-aug" data-augmented-ui>
+          <input type="password" id="password" placeholder=" password" >
+        </div>
+        <button class="button-aug" id="login" data-augmented-ui>login</button>
+      </div>
+    </div>
+    <dialog id="login-failed-dialog" data-augmented-ui> 
+      <p>
+        Wrong login information
+      </p>
+    
+      <div>
+        <button class="button-aug" id="close-dialog-button" data-augmented-ui>Close</button>
+      </div>
+    </dialog>
+    <script>
+      
+      let users = [
+          { username: "konigwurmer", password: "king of worms" },
+          { username: "Arlyn", password: "Yazzy" },
+          { username: "Landon", password: "Bark" },
+          { username: "Marco", password: "Mannheimer" },
+          { username: "Maria", password: "Von Lupus"},
+        { username: "Vera", password: "Rios" },
+      ];
+
+      document.getElementById("close-dialog-button").onclick = () => {
+        document.getElementById("login-failed-dialog").close();
+      }
+
+      document.getElementById("login").onclick = ()=> {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        users.forEach((user) => {
+          if (username === user.username && password === user.password) {
+            window.location.href = './inbox.html';
+          }
+          document.getElementById("login-failed-dialog").showModal();
+        })
+      }
+    </script>
+  </body>
+</html>

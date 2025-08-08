@@ -1,0 +1,217 @@
+@import "https://unpkg.com/augmented-ui@2.0.0/aug-core.min.css";
+
+/* General */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  --palletHR: 0deg;
+  --pallet1: #131323;
+  --pallet2: #551512;
+  --pallet3: #FF4E3B;
+  --pallet4: #00EDFF;
+    background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px 0.3vh,
+    rgba(0, 0, 0, 0.25) 0.3vh 0.5vh
+  ), radial-gradient(
+    at center top,
+    var(--pallet3),
+    transparent 75%
+  ) center -50vh / 200vw 150vh no-repeat fixed, var(--pallet1);
+}
+.center-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 90vw;
+}
+@keyframes openScale {
+  0% {
+    transform: scale(1,0);
+  }
+  20% {
+    transform: scale(1,0);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}
+
+/* Scrollbar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px var(--pallet4); 
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pallet4); 
+  border-radius: 0px;
+}
+
+/* Login Page */
+.login-container {
+  animation: 0.5s ease-in 0s 1 openScale;
+  padding: 2.5rem 2.5rem 4.5rem 2.5rem;
+  color: var(--pallet4);
+  
+  --aug-border: initial;
+  --aug-border-all: 0.125rem;
+  --aug-inlay: initial;
+  --aug-inlay-all: 0px;
+  --aug-inlay-bg: var(--pallet1);
+  --aug-inlay-opacity: 0.75;
+  --aug-clip-tr1: initial;
+  --aug-clip-br1: initial;
+  --aug-tr1: 0.5rem;
+  --aug-tr-inset2: 70%;
+  --aug-tr1-alt-join-out: initial;
+  --aug-br1: 1.5rem;
+  --aug-rect-l1: initial;
+  --aug-rect-l2: initial;
+  --aug-l1: 0.25rem;
+  --aug-l2: 0.25rem;
+  --aug-l-extend1: 1rem;
+  --aug-l-center: 70%;
+}
+
+/* Dialog */
+dialog[open]{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 1.5em;
+  
+  background: linear-gradient( to right, transparent 0 1vw, var(--pallet3) 1vw 1.125vw, transparent 1.125vw ), var(--pallet1);
+
+  color: var(--pallet3);
+
+  --aug-border: initial;
+  --aug-border-all: 0.125rem;
+  --aug-inlay: initial;
+  --aug-inlay-all: 0px;
+  --aug-inlay-bg: var(--pallet1);
+  --aug-inlay-opacity: 0.75;
+  --aug-clip-tr1: initial;
+  --aug-clip-br1: initial;
+  --aug-tr1: 0.5rem;
+  --aug-tr-inset2: 70%;
+  --aug-tr1-alt-join-out: initial;
+  --aug-br1: 1.5rem;
+  --aug-rect-l1: initial;
+  --aug-rect-l2: initial;
+  --aug-l1: 0.25rem;
+  --aug-l2: 0.25rem;
+  --aug-l-extend1: 1rem;
+  --aug-l-center: 70%;
+}
+dialog[open] p{
+  padding: 2rem;
+}
+dialog[open] button{
+  margin: 0 1rem 1rem;
+}
+dialog[open]::backdrop{
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+}
+
+input {
+  all: unset;
+  font-size: 1.5em;
+  padding: 0.2rem;
+  color: var(--pallet3);
+  width: 100%;
+}
+input:focus {
+    color: var(--pallet4);
+}
+input::placeholder {
+  color: var(--pallet3);
+}
+input:focus::placeholder {
+  color: transparent;
+}
+.input-aug:has(input:focus){
+    --aug-border-bg: var(--pallet4);
+}
+.input-aug {
+  margin: 1rem;
+  padding: 0.2rem;
+  --aug-border: initial;
+  --aug-border-all: 0.125vw;
+  --aug-border-bg: var(--pallet3);
+  --aug-inlay: initial;
+  --aug-inlay-all: 0px;
+  --aug-inlay-bg: var(--pallet1);
+  --aug-br1: 0.75rem;
+  --aug-clip-br1: initial;
+}
+
+button {
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.3rem 1rem;
+  margin: 0.5rem 1rem;
+  color: var(--pallet3);
+  background: transparent;
+  float: right;
+}
+.button-aug {
+  --aug-border: initial;
+  --aug-border-all: 0.125vw;
+  --aug-inlay: initial;
+  --aug-inlay-all: 0px;
+  --aug-inlay-bg: var(--pallet1);
+  --aug-inlay-opacity: 0.75;
+  --aug-clip-br1: initial;
+  --aug-br1: 0.75rem;
+}
+.button-aug:hover {
+  --aug-border-bg: var(--pallet4);
+  color: var(--pallet4);
+  --aug-inlay-bg: radial-gradient(
+    var(--pallet1),
+    var(--pallet4) 200%
+  );
+}
+
+/* Mission page */
+.mission-container {
+  animation: 0.5s ease-in 0s 1 openScale;
+  padding: 1.5rem;
+  margin: 2rem;
+  color: var(--pallet4);
+  max-height: 80vh;
+
+  --aug-border: initial;
+  --aug-border-all: 0.125rem;
+  --aug-inlay: initial;
+  --aug-inlay-all: 0px;
+  --aug-inlay-bg: var(--pallet1);
+  --aug-inlay-opacity: 0.75;
+  --aug-clip-t1: initial;
+  --aug-clip-t2: initial;
+  --aug-t-extend1: 0.5rem;
+  --aug-clip-b1: initial;
+  --aug-clip-b2: initial;
+  --aug-b-extend1: 50%;
+  --aug-t-extend1: 50%;
+}
+
+.mission-description {
+  overflow-y: auto;
+  max-height: 60vh;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+}
