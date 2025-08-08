@@ -220,8 +220,10 @@ button {
   text-align: justify;
 }
 
-img {
-  max-width: 50%;
-  height: auto;
+.mission-description .mission-image {
   display: block;
+  width: 100%;        /* fill the container on small screens */
+  max-width: 600px;   /* but never grow beyond this on large screens */
+  height: auto;       /* keep aspect ratio */
+  margin: 0 auto;     /* center it */
 }
